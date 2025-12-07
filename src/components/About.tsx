@@ -1,5 +1,5 @@
-import { Target, Eye, Heart } from "lucide-react";
-import safariLodge from "@/assets/safari-lodge.jpg";
+import { Award, Target, Shield, TrendingUp } from "lucide-react";
+import martinPhoto from "@/assets/martin-koyih-photo.jpeg";
 
 const About = () => {
   return (
@@ -7,73 +7,88 @@ const About = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
-          <div className="relative animate-fade-up">
+          <div className="relative animate-fade-up order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden shadow-elevated">
               <img
-                src={safariLodge}
-                alt="Luxury Safari Lodge Experience"
-                className="w-full h-[400px] lg:h-[500px] object-cover"
+                src={martinPhoto}
+                alt="Martin Koyih at work"
+                className="w-full h-[400px] lg:h-[500px] object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
             </div>
             {/* Floating Card */}
-            <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl shadow-elevated max-w-[200px]">
-              <p className="font-serif text-3xl font-bold text-primary">10+</p>
-              <p className="text-muted-foreground text-sm mt-1">Years of Excellence in African Travel</p>
+            <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl shadow-elevated max-w-[220px]">
+              <div className="flex items-center gap-3 mb-2">
+                <Award className="h-8 w-8 text-primary" />
+                <p className="font-serif text-2xl font-bold text-foreground">CPA (K)</p>
+              </div>
+              <p className="text-muted-foreground text-sm">Member of ICPAK - Institute of Certified Public Accountants of Kenya</p>
             </div>
           </div>
 
           {/* Content */}
-          <div className="lg:pl-8">
+          <div className="lg:pl-8 order-1 lg:order-2">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              About Ayawin
+              About Martin Koyih
             </span>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
-              Your Gateway to{" "}
-              <span className="text-primary">African Adventures</span>
+              Your Trusted{" "}
+              <span className="text-primary">Financial Partner</span>
             </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              With over a decade of experience in accounting and financial management, 
+              Martin Koyih is a Certified Public Accountant dedicated to helping 
+              individuals and businesses navigate the complex world of finance.
+            </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Founded with a passion for showcasing East Africa's unparalleled beauty, 
-              Ayawin has been crafting extraordinary travel experiences for over a decade. 
-              We believe every journey should be transformative, connecting travelers with 
-              the heart of Africa's wild landscapes and vibrant cultures.
+              Specializing in tax planning, auditing, financial consulting, and business 
+              advisory services, Martin brings a wealth of knowledge and a commitment 
+              to excellence to every client relationship.
             </p>
 
-            {/* Values */}
-            <div className="space-y-6">
+            {/* Expertise Areas */}
+            <div className="grid sm:grid-cols-2 gap-6">
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Target className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Our Mission</h3>
+                  <h3 className="font-semibold text-foreground mb-1">Strategic Planning</h3>
                   <p className="text-muted-foreground text-sm">
-                    To provide authentic, sustainable travel experiences that celebrate 
-                    Africa's natural wonders while supporting local communities.
+                    Long-term financial strategies tailored to your goals.
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center">
-                  <Eye className="h-6 w-6 text-secondary" />
+                  <Shield className="h-6 w-6 text-secondary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Our Vision</h3>
+                  <h3 className="font-semibold text-foreground mb-1">Tax Compliance</h3>
                   <p className="text-muted-foreground text-sm">
-                    To be East Africa's most trusted travel partner, known for 
-                    exceptional service and unforgettable experiences.
+                    KRA compliance and tax optimization expertise.
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <Heart className="h-6 w-6 text-accent" />
+                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Our Values</h3>
+                  <h3 className="font-semibold text-foreground mb-1">Business Growth</h3>
                   <p className="text-muted-foreground text-sm">
-                    Sustainability, authenticity, excellence, and a deep respect 
-                    for Africa's wildlife and heritage.
+                    Advisory services to scale your business efficiently.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center">
+                  <Award className="h-6 w-6 text-secondary" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">ICPAK Certified</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Professional standards and ethical practice.
                   </p>
                 </div>
               </div>

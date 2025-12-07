@@ -6,55 +6,55 @@
 
 @layer base {
   :root {
-    --background: 40 30% 98%;
-    --foreground: 30 10% 15%;
+    --background: 40 20% 98%;
+    --foreground: 220 25% 15%;
 
-    --card: 40 25% 96%;
-    --card-foreground: 30 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
 
-    --popover: 40 30% 98%;
-    --popover-foreground: 30 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 35 85% 55%;
-    --primary-foreground: 40 30% 98%;
+    --primary: 42 70% 50%;
+    --primary-foreground: 220 25% 15%;
 
-    --secondary: 150 35% 25%;
-    --secondary-foreground: 40 30% 98%;
+    --secondary: 220 35% 25%;
+    --secondary-foreground: 40 20% 98%;
 
-    --muted: 35 20% 90%;
-    --muted-foreground: 30 10% 45%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 18 70% 50%;
-    --accent-foreground: 40 30% 98%;
+    --accent: 42 85% 55%;
+    --accent-foreground: 220 25% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 25% 85%;
-    --input: 35 25% 85%;
-    --ring: 35 85% 55%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 42 70% 50%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --gold: 35 85% 55%;
-    --gold-light: 40 75% 70%;
-    --forest: 150 35% 25%;
-    --forest-light: 150 30% 40%;
-    --terracotta: 18 70% 50%;
-    --terracotta-light: 18 60% 65%;
-    --sand: 40 30% 92%;
-    --charcoal: 30 10% 20%;
+    /* Custom tokens - Navy & Gold CPA theme */
+    --gold: 42 70% 50%;
+    --gold-light: 42 60% 65%;
+    --gold-dark: 42 75% 40%;
+    --navy: 220 35% 25%;
+    --navy-light: 220 30% 35%;
+    --navy-dark: 220 40% 18%;
+    --cream: 40 20% 96%;
+    --charcoal: 220 20% 18%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(35 85% 55% / 0.9), hsl(18 70% 50% / 0.8));
-    --gradient-sunset: linear-gradient(180deg, hsl(35 85% 55% / 0.1), hsl(18 70% 50% / 0.05));
-    --gradient-overlay: linear-gradient(180deg, transparent, hsl(30 10% 15% / 0.7));
+    --gradient-hero: linear-gradient(135deg, hsl(220 35% 25% / 0.95), hsl(220 40% 18% / 0.98));
+    --gradient-gold: linear-gradient(135deg, hsl(42 70% 50%), hsl(42 85% 55%));
+    --gradient-overlay: linear-gradient(180deg, transparent, hsl(220 25% 15% / 0.8));
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(30 10% 15% / 0.1);
-    --shadow-elevated: 0 20px 40px -12px hsl(30 10% 15% / 0.15);
-    --shadow-glow: 0 0 40px hsl(35 85% 55% / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(220 25% 15% / 0.1);
+    --shadow-elevated: 0 20px 40px -12px hsl(220 25% 15% / 0.15);
+    --shadow-glow: 0 0 40px hsl(42 70% 50% / 0.25);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -67,33 +67,33 @@
   }
 
   .dark {
-    --background: 30 15% 10%;
+    --background: 220 25% 10%;
     --foreground: 40 20% 95%;
 
-    --card: 30 15% 14%;
+    --card: 220 25% 14%;
     --card-foreground: 40 20% 95%;
 
-    --popover: 30 15% 10%;
+    --popover: 220 25% 10%;
     --popover-foreground: 40 20% 95%;
 
-    --primary: 35 85% 55%;
-    --primary-foreground: 30 15% 10%;
+    --primary: 42 70% 55%;
+    --primary-foreground: 220 25% 10%;
 
-    --secondary: 150 30% 35%;
+    --secondary: 220 30% 40%;
     --secondary-foreground: 40 20% 95%;
 
-    --muted: 30 15% 20%;
-    --muted-foreground: 40 15% 65%;
+    --muted: 220 20% 20%;
+    --muted-foreground: 220 15% 65%;
 
-    --accent: 18 70% 55%;
-    --accent-foreground: 40 20% 95%;
+    --accent: 42 85% 55%;
+    --accent-foreground: 220 25% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 15% 25%;
-    --input: 30 15% 25%;
-    --ring: 35 85% 55%;
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 42 70% 55%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -131,8 +131,8 @@
     background: var(--gradient-hero);
   }
 
-  .bg-gradient-sunset {
-    background: var(--gradient-sunset);
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
   }
 
   .shadow-soft {

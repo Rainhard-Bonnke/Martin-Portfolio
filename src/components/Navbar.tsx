@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/martin-koyih-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,7 +19,6 @@ const Navbar = () => {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#services", label: "Services" },
-    { href: "#destinations", label: "Destinations" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#contact", label: "Contact" },
   ];
@@ -27,19 +27,19 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-5"
+          ? "bg-background/95 backdrop-blur-md shadow-soft py-2"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
-            <span className={`font-serif text-2xl font-bold transition-colors duration-300 ${
-              isScrolled ? "text-foreground" : "text-primary-foreground"
-            }`}>
-              Ayawin
-            </span>
+            <img 
+              src={logo} 
+              alt="Martin Koyih CPA Logo" 
+              className="h-12 md:h-14 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -49,7 +49,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors duration-300 hover:text-primary ${
-                  isScrolled ? "text-foreground" : "text-primary-foreground"
+                  isScrolled ? "text-foreground" : "text-secondary-foreground"
                 }`}
               >
                 {link.label}
@@ -64,7 +64,7 @@ const Navbar = () => {
               size="default"
               asChild
             >
-              <a href="#contact">Book Now</a>
+              <a href="#contact">Get Consultation</a>
             </Button>
           </div>
 
@@ -74,9 +74,9 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"}`} />
+              <X className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-secondary-foreground"}`} />
             ) : (
-              <Menu className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"}`} />
+              <Menu className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-secondary-foreground"}`} />
             )}
           </button>
         </div>
@@ -96,7 +96,7 @@ const Navbar = () => {
                 </a>
               ))}
               <Button variant="default" size="default" asChild>
-                <a href="#contact">Book Now</a>
+                <a href="#contact">Get Consultation</a>
               </Button>
             </div>
           </div>
