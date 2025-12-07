@@ -1,42 +1,43 @@
 import { Button } from "@/components/ui/button";
-import { Compass, Camera, Tent, Mountain, Users, Sparkles } from "lucide-react";
+import { 
+  Calculator, 
+  FileText, 
+  TrendingUp, 
+  Building2, 
+  PiggyBank, 
+  Users 
+} from "lucide-react";
 
 const services = [
   {
-    icon: Compass,
-    title: "Safari Adventures",
-    description: "Embark on thrilling game drives through Kenya's most renowned national parks and reserves.",
-    price: "From $1,500",
+    icon: Calculator,
+    title: "Tax Planning & Filing",
+    description: "Comprehensive tax planning strategies and timely KRA compliance to minimize liabilities and maximize returns.",
   },
   {
-    icon: Camera,
-    title: "Photography Tours",
-    description: "Capture stunning wildlife moments with expert guides and optimal positioning.",
-    price: "From $2,000",
+    icon: FileText,
+    title: "Audit & Assurance",
+    description: "Independent audit services providing stakeholders with reliable financial information and compliance verification.",
   },
   {
-    icon: Tent,
-    title: "Luxury Camping",
-    description: "Experience the wild in comfort with our premium tented camps under starlit skies.",
-    price: "From $1,800",
+    icon: TrendingUp,
+    title: "Financial Consulting",
+    description: "Strategic financial advice to help you make informed decisions and achieve your business objectives.",
   },
   {
-    icon: Mountain,
-    title: "Mountain Treks",
-    description: "Conquer Mount Kenya and other peaks with our experienced mountaineering guides.",
-    price: "From $1,200",
+    icon: Building2,
+    title: "Business Advisory",
+    description: "Expert guidance on business formation, restructuring, mergers, and operational efficiency improvements.",
+  },
+  {
+    icon: PiggyBank,
+    title: "Bookkeeping Services",
+    description: "Accurate and timely bookkeeping to keep your financial records organized and audit-ready.",
   },
   {
     icon: Users,
-    title: "Cultural Tours",
-    description: "Immerse yourself in Maasai traditions and local community experiences.",
-    price: "From $800",
-  },
-  {
-    icon: Sparkles,
-    title: "Custom Packages",
-    description: "Tailored itineraries designed around your preferences and travel dreams.",
-    price: "Custom Quote",
+    title: "Payroll Management",
+    description: "Complete payroll solutions including PAYE, NSSF, NHIF compliance and employee payment processing.",
   },
 ];
 
@@ -47,15 +48,15 @@ const Services = () => {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Our Services
+            Services
           </span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
-            Crafted Travel{" "}
-            <span className="text-primary">Experiences</span>
+            Professional{" "}
+            <span className="text-primary">Accounting Services</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            From heart-pounding safaris to serene beach escapes, we offer diverse 
-            packages designed to showcase the best of East Africa.
+            Comprehensive financial solutions tailored to meet the unique needs 
+            of individuals and businesses across Kenya.
           </p>
         </div>
 
@@ -73,15 +74,9 @@ const Services = () => {
               <h3 className="font-serif text-xl font-bold text-foreground mb-3">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {service.description}
               </p>
-              <div className="flex items-center justify-between">
-                <span className="text-primary font-semibold">{service.price}</span>
-                <Button variant="ghost" size="sm" asChild>
-                  <a href="#contact">Learn More →</a>
-                </Button>
-              </div>
             </div>
           ))}
         </div>
@@ -89,7 +84,7 @@ const Services = () => {
         {/* CTA */}
         <div className="text-center mt-12">
           <Button variant="default" size="lg" asChild>
-            <a href="#contact">View All Packages</a>
+            <a href="#contact">Request a Consultation</a>
           </Button>
         </div>
       </div>
