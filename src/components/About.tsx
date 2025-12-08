@@ -35,14 +35,14 @@ const About = () => {
               Your Trusted{" "}
               <span className="text-primary">Financial Partner</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              With over a decade of experience in accounting and financial management, 
+            <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-6">
+              With 3+ years of experience in accounting and financial management, 
               Martin Koyih is a Certified Public Accountant dedicated to helping 
               individuals and businesses navigate the complex world of finance.
             </p>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Specializing in tax planning, auditing, financial consulting, and business 
-              advisory services, Martin brings a wealth of knowledge and a commitment 
+            <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-8">
+              Specializing in tax planning, auditing, stock management, financial consulting, 
+              and business advisory services, Martin brings expertise and a commitment 
               to excellence to every client relationship.
             </p>
 

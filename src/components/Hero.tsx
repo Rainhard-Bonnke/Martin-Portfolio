@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
-import martinPhoto from "@/assets/martin-koyih-photo.jpeg";
+import { ArrowRight, Phone, CheckCircle } from "lucide-react";
+import martinPhoto from "@/assets/martin-hero-photo.jpeg";
 
 const Hero = () => {
   return (
@@ -16,39 +16,47 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 py-20 lg:py-0">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Text Content */}
           <div className="text-center lg:text-left">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-8 animate-fade-up">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              <span className="text-secondary-foreground text-sm font-medium">
-                Certified Public Accountant
-              </span>
-            </div>
-
             {/* Heading */}
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-6 animate-fade-up animation-delay-200">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-4 lg:mb-6 animate-fade-up">
               Martin Koyih,{" "}
               <span className="text-primary">CPA</span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg md:text-xl text-secondary-foreground/80 max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-up animation-delay-400">
+            <p className="text-base sm:text-lg md:text-xl text-secondary-foreground/80 max-w-xl mx-auto lg:mx-0 mb-6 lg:mb-8 animate-fade-up animation-delay-200">
               Providing expert financial guidance, tax planning, and accounting services 
               to help individuals and businesses achieve their financial goals with confidence.
             </p>
 
+            {/* Key Points */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center lg:justify-start mb-6 lg:mb-8 animate-fade-up animation-delay-300">
+              <div className="flex items-center gap-2 text-secondary-foreground/90">
+                <CheckCircle className="h-5 w-5 text-primary" />
+                <span className="text-sm">ICPAK Certified</span>
+              </div>
+              <div className="flex items-center gap-2 text-secondary-foreground/90">
+                <CheckCircle className="h-5 w-5 text-primary" />
+                <span className="text-sm">Tax Specialist</span>
+              </div>
+              <div className="flex items-center gap-2 text-secondary-foreground/90">
+                <CheckCircle className="h-5 w-5 text-primary" />
+                <span className="text-sm">Audit Expert</span>
+              </div>
+            </div>
+
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-up animation-delay-600">
-              <Button variant="hero" size="xl" asChild>
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 animate-fade-up animation-delay-400">
+              <Button variant="hero" size="lg" className="w-full sm:w-auto" asChild>
                 <a href="#services">
                   View Services
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="heroOutline" size="xl" asChild>
+              <Button variant="heroOutline" size="lg" className="w-full sm:w-auto" asChild>
                 <a href="tel:+254791259510">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now
@@ -57,38 +65,38 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-12 max-w-lg mx-auto lg:mx-0 animate-fade-up animation-delay-600">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-8 lg:mt-12 max-w-lg mx-auto lg:mx-0 animate-fade-up animation-delay-500">
               <div className="text-center lg:text-left">
-                <p className="font-serif text-3xl md:text-4xl font-bold text-primary">10+</p>
-                <p className="text-secondary-foreground/70 text-sm mt-1">Years Experience</p>
+                <p className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-primary">3+</p>
+                <p className="text-secondary-foreground/70 text-xs sm:text-sm mt-1">Years Experience</p>
               </div>
-              <div className="text-center lg:text-left border-x border-secondary-foreground/20 px-4">
-                <p className="font-serif text-3xl md:text-4xl font-bold text-primary">500+</p>
-                <p className="text-secondary-foreground/70 text-sm mt-1">Clients Served</p>
+              <div className="text-center lg:text-left border-x border-secondary-foreground/20 px-2 sm:px-4">
+                <p className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-primary">100+</p>
+                <p className="text-secondary-foreground/70 text-xs sm:text-sm mt-1">Clients Served</p>
               </div>
               <div className="text-center lg:text-left">
-                <p className="font-serif text-3xl md:text-4xl font-bold text-primary">100%</p>
-                <p className="text-secondary-foreground/70 text-sm mt-1">Satisfaction</p>
+                <p className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-primary">100%</p>
+                <p className="text-secondary-foreground/70 text-xs sm:text-sm mt-1">Satisfaction</p>
               </div>
             </div>
           </div>
 
           {/* Image */}
-          <div className="relative animate-fade-up animation-delay-400">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+          <div className="relative animate-fade-up animation-delay-300 order-first lg:order-last">
+            <div className="relative mx-auto max-w-xs sm:max-w-sm lg:max-w-none">
               {/* Gold accent border */}
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary/30 via-primary/10 to-transparent rounded-2xl" />
+              <div className="absolute -inset-3 lg:-inset-4 bg-gradient-to-br from-primary/30 via-primary/10 to-transparent rounded-2xl" />
               <div className="relative rounded-2xl overflow-hidden shadow-elevated">
                 <img
                   src={martinPhoto}
                   alt="Martin Koyih - Certified Public Accountant"
-                  className="w-full h-[400px] lg:h-[500px] object-cover object-top"
+                  className="w-full h-[280px] sm:h-[350px] lg:h-[450px] object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent" />
               </div>
               {/* Floating credential badge */}
-              <div className="absolute -bottom-4 -left-4 bg-card p-4 rounded-xl shadow-elevated">
-                <p className="font-serif text-lg font-bold text-foreground">CPA (K)</p>
+              <div className="absolute -bottom-3 -left-3 lg:-bottom-4 lg:-left-4 bg-card p-3 lg:p-4 rounded-xl shadow-elevated">
+                <p className="font-serif text-base lg:text-lg font-bold text-foreground">CPA (K)</p>
                 <p className="text-muted-foreground text-xs mt-1">ICPAK Certified</p>
               </div>
             </div>
@@ -96,8 +104,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
+      {/* Scroll Indicator - Hidden on mobile */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float hidden lg:block">
         <div className="w-6 h-10 border-2 border-secondary-foreground/40 rounded-full flex justify-center pt-2">
           <div className="w-1 h-2 bg-secondary-foreground/60 rounded-full animate-bounce" />
         </div>
