@@ -8,21 +8,21 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
           <div className="relative animate-fade-up order-2 lg:order-1">
-            <div className="relative rounded-2xl overflow-hidden shadow-elevated">
+            <div className="relative rounded-2xl overflow-hidden shadow-elevated mx-auto max-w-sm sm:max-w-md lg:max-w-none">
               <img
                 src={martinPhoto}
                 alt="Martin Koyih at work"
-                className="w-full h-[400px] lg:h-[500px] object-cover object-top"
+                className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
             </div>
             {/* Floating Card */}
-            <div className="absolute -bottom-6 -right-6 bg-card p-6 rounded-xl shadow-elevated max-w-[220px]">
-              <div className="flex items-center gap-3 mb-2">
-                <Award className="h-8 w-8 text-primary" />
-                <p className="font-serif text-2xl font-bold text-foreground">CPA (K)</p>
+            <div className="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-card p-4 sm:p-6 rounded-xl shadow-elevated max-w-[180px] sm:max-w-[220px]">
+              <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                <Award className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                <p className="font-serif text-xl sm:text-2xl font-bold text-foreground">CPA (K)</p>
               </div>
-              <p className="text-muted-foreground text-sm">Member of ICPAK - Institute of Certified Public Accountants of Kenya</p>
+              <p className="text-muted-foreground text-xs sm:text-sm">Member of ICPAK - Institute of Certified Public Accountants of Kenya</p>
             </div>
           </div>
 
@@ -35,10 +35,18 @@ const About = () => {
               Your Trusted{" "}
               <span className="text-primary">Financial Partner</span>
             </h2>
-            <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-6">
+            <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-4">
               With 3+ years of experience in accounting and financial management, 
-              Martin Koyih is a Certified Public Accountant dedicated to helping 
-              individuals and businesses navigate the complex world of finance.
+              Martin Koyih is a Certified Public Accountant and the Founder & Manager of{" "}
+              <a 
+                href="https://ayawin.co.ke" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:underline font-semibold"
+              >
+                Ayawin Stock Solution
+              </a>
+              , dedicated to helping individuals and businesses navigate the complex world of finance.
             </p>
             <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-8">
               Specializing in tax planning, auditing, stock management, financial consulting, 

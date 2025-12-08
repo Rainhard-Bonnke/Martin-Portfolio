@@ -21,14 +21,30 @@ const Hero = () => {
           {/* Text Content */}
           <div className="text-center lg:text-left">
             {/* Heading */}
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-4 lg:mb-6 animate-fade-up">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-foreground leading-tight mb-2 lg:mb-4 animate-fade-up">
               Martin Koyih,{" "}
               <span className="text-primary">CPA</span>
             </h1>
 
+            {/* Role Badge */}
+            <div className="mb-4 lg:mb-6 animate-fade-up animation-delay-100">
+              <a 
+                href="https://ayawin.co.ke" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full hover:bg-primary/20 transition-colors"
+              >
+                <span className="text-secondary-foreground/90 text-sm sm:text-base font-medium">
+                  Founder & Manager at{" "}
+                  <span className="text-primary font-semibold">Ayawin Stock Solution</span>
+                </span>
+                <ArrowRight className="h-4 w-4 text-primary" />
+              </a>
+            </div>
+
             {/* Subheading */}
             <p className="text-base sm:text-lg md:text-xl text-secondary-foreground/80 max-w-xl mx-auto lg:mx-0 mb-6 lg:mb-8 animate-fade-up animation-delay-200">
-              Providing expert financial guidance, tax planning, and accounting services 
+              Providing expert financial guidance, tax planning, stock management, and accounting services 
               to help individuals and businesses achieve their financial goals with confidence.
             </p>
 
@@ -44,7 +60,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-2 text-secondary-foreground/90">
                 <CheckCircle className="h-5 w-5 text-primary" />
-                <span className="text-sm">Audit Expert</span>
+                <span className="text-sm">Stock Expert</span>
               </div>
             </div>
 
@@ -83,21 +99,20 @@ const Hero = () => {
 
           {/* Image */}
           <div className="relative animate-fade-up animation-delay-300 order-first lg:order-last">
-            <div className="relative mx-auto max-w-xs sm:max-w-sm lg:max-w-none">
+            <div className="relative mx-auto w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
               {/* Gold accent border */}
-              <div className="absolute -inset-3 lg:-inset-4 bg-gradient-to-br from-primary/30 via-primary/10 to-transparent rounded-2xl" />
-              <div className="relative rounded-2xl overflow-hidden shadow-elevated">
+              <div className="absolute -inset-2 sm:-inset-3 lg:-inset-4 bg-gradient-to-br from-primary/40 via-primary/20 to-transparent rounded-full" />
+              <div className="relative rounded-full overflow-hidden shadow-elevated w-full h-full ring-4 ring-primary/20">
                 <img
                   src={martinPhoto}
                   alt="Martin Koyih - Certified Public Accountant"
-                  className="w-full h-[280px] sm:h-[350px] lg:h-[450px] object-cover object-center"
+                  className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
               </div>
               {/* Floating credential badge */}
-              <div className="absolute -bottom-3 -left-3 lg:-bottom-4 lg:-left-4 bg-card p-3 lg:p-4 rounded-xl shadow-elevated">
-                <p className="font-serif text-base lg:text-lg font-bold text-foreground">CPA (K)</p>
-                <p className="text-muted-foreground text-xs mt-1">ICPAK Certified</p>
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-card px-4 py-2 lg:px-5 lg:py-3 rounded-full shadow-elevated">
+                <p className="font-serif text-sm lg:text-base font-bold text-foreground whitespace-nowrap">CPA (K) • ICPAK</p>
               </div>
             </div>
           </div>
