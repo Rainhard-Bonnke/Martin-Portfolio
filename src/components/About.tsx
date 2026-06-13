@@ -1,10 +1,9 @@
-import { Download } from "lucide-react";
+import { Download, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import aboutPhoto from "@/assets/martin-koyih-photo.jpeg";
 import SectionHeader from "@/components/SectionHeader";
 import { CV_PATH } from "@/lib/contact";
-import { profile, skillTags, languages } from "@/lib/portfolio-data";
-
+import { profile, skillTags, languages, ayawin } from "@/lib/portfolio-data";
 const About = () => {
   return (
     <section id="about" className="py-24 lg:py-32 relative overflow-hidden">
@@ -22,12 +21,11 @@ const About = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-secondary text-secondary-foreground p-6 rounded-lg max-w-[220px] shadow-elevated">
-                <p className="font-display text-3xl font-semibold text-primary">CPA</p>
+                <p className="font-display text-2xl font-semibold text-primary">Founder</p>
                 <p className="text-sm text-secondary-foreground/70 mt-1">
-                  Certification in progress, Vision Institute of Professionals
+                  {ayawin.name}, serving trusted clients across Kenya
                 </p>
-              </div>
-            </div>
+              </div>            </div>
           </div>
 
           <div className="lg:col-span-7 lg:pt-8">
@@ -46,15 +44,27 @@ const About = () => {
 
             <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
               <p>
-                Detail-oriented inventory and stock control professional with hands-on
-                experience in stock audits, inventory reconciliation, procurement, and
-                ERP-based stock management. Skilled at maintaining accurate stock records,
-                minimizing variances, and supporting smooth supply chain operations across
-                retail and hospitality outlets.
+                I am Martin Koyih, Founder and Manager of{" "}
+                <a
+                  href={ayawin.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-medium hover:underline inline-flex items-center gap-0.5"
+                >
+                  {ayawin.name}
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+                , a growing stock and accounting solutions company with trusted clients
+                across Kenya. I bring hands-on experience in stock audits, inventory
+                reconciliation, procurement, and ERP-based stock management.
+              </p>
+              <p>
+                {profile.certificationNote} Combined with my BCom in Finance from the
+                University of Nairobi, I offer both entrepreneurial leadership and
+                practical inventory expertise.
               </p>
               <p>{profile.objective}</p>
             </div>
-
             <Button variant="outline" className="rounded-full mb-10" asChild>
               <a href={CV_PATH} download>
                 <Download className="mr-2 h-4 w-4" />

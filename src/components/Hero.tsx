@@ -2,7 +2,7 @@ import { ArrowUpRight, Download, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroPhoto from "@/assets/Founder.jpeg";
 import { CV_PATH, getWhatsAppLink } from "@/lib/contact";
-import { profile } from "@/lib/portfolio-data";
+import { profile, ayawin } from "@/lib/portfolio-data";
 
 const Hero = () => {
   return (
@@ -31,7 +31,7 @@ const Hero = () => {
             {profile.headline}
           </p>
 
-          <p className="text-base text-secondary-foreground/70 max-w-md mb-3 animate-fade-up animation-delay-200 leading-relaxed">
+          <p className="text-base text-secondary-foreground/70 max-w-md mb-10 animate-fade-up animation-delay-200 leading-relaxed">
             {profile.subheadline}
           </p>
 
@@ -74,9 +74,9 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/20 to-transparent" />
           </div>
           <div className="absolute bottom-12 left-0 -translate-x-1/2 bg-card rounded-lg px-6 py-4 shadow-elevated border border-border/60 hidden xl:block">
-            <p className="font-display text-2xl font-semibold text-foreground">BCom Finance</p>
+            <p className="font-display text-xl font-semibold text-foreground">{ayawin.name}</p>
             <p className="text-muted-foreground text-xs uppercase tracking-widest mt-0.5">
-              University of Nairobi
+              Founder & Manager
             </p>
           </div>
         </div>

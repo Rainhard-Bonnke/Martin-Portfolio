@@ -1,8 +1,16 @@
+export const ayawin = {
+  name: "Ayawin Stock Solution",
+  url: "https://ayawin.co.ke",
+  role: "Founder & Manager",
+  description:
+    "A growing stock and accounting solutions company serving trusted clients across Kenya with inventory management, stock control, and financial support.",
+};
+
 export const profile = {
   name: "Martin Koyih",
   headline: "Stock Controller & Inventory Professional",
   subheadline:
-    "Detail-oriented professional with hands-on experience in stock audits, inventory reconciliation, procurement, and ERP-based stock management.",
+    "Founder & Manager of Ayawin Stock Solution, a growing company with trusted clients. Hands-on experience in stock audits, inventory reconciliation, procurement, and ERP-based stock management.",
   availability: "Open to stock controller opportunities",
   objective:
     "To build a career in stock control and inventory management, growing into roles with greater responsibility such as Stock Control Supervisor or Inventory Manager, while continuously developing expertise in supply chain and warehouse operations.",
@@ -14,11 +22,10 @@ export const profile = {
 
 export const stats = [
   { value: "4+", label: "Years Experience" },
-  { value: "10+", label: "Core Skills" },
+  { value: "100+", label: "Trusted Clients" },
   { value: "BCom", label: "Finance Graduate" },
   { value: "CPA", label: "In Progress" },
 ];
-
 export const skills = [
   {
     title: "Stock Control & Audits",
@@ -56,10 +63,21 @@ export const skills = [
 
 export const experience = [
   {
+    period: "Present",
+    title: "Founder & Manager",
+    organization: "Ayawin Stock Solution",
+    link: "https://ayawin.co.ke",
+    highlights: [
+      "Founded and lead Ayawin Stock Solution, a growing company delivering stock management and accounting support to trusted clients.",
+      "Oversee inventory control, stock reconciliation, and financial record-keeping for businesses across Kenya.",
+      "Build client relationships through reliable service, accurate reporting, and professional stock solutions.",
+      "Guide company growth while maintaining high standards in stock control and operational efficiency.",
+    ],
+  },
+  {
     period: "2024 to 2026",
     title: "Inventory Auditor",
-    organization: "StressFree Stock Solutions",
-    highlights: [
+    organization: "StressFree Stock Solutions",    highlights: [
       "Conducted inventory audits and stock-taking across major outlets and hospitality clients including JWines, RiverRose, JoliJan, and COVO.",
       "Reconciled physical counts with system records and investigated discrepancies.",
       "Prepared audit reports highlighting stock variances and recommendations.",

@@ -59,7 +59,7 @@ const Contact = () => {
     <section id="contact" className="py-24 lg:py-32">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
-          number="04"
+          number="05"
           label="Contact"
           title="Let's connect about"
           highlight="your opportunity"

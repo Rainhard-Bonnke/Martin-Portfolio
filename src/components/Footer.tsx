@@ -1,9 +1,11 @@
 import { ArrowUpRight, Download } from "lucide-react";
 import { CV_PATH, EMAIL, getWhatsAppLink, LOCATION, PHONE_DISPLAY } from "@/lib/contact";
+import { ayawin } from "@/lib/portfolio-data";
 
 const footerLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
+  { label: "At Work", href: "#gallery" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
@@ -20,12 +22,20 @@ const Footer = () => {
               Martin Koyih
             </a>
             <p className="text-muted-foreground text-sm mt-1">
-              Stock Controller & Inventory Professional
+              Stock Controller & Founder, {ayawin.name}
             </p>
             <p className="text-muted-foreground text-sm leading-relaxed mt-4 max-w-xs">
-              Inventory audits, stock reconciliation, procurement support, and ERP-based
-              stock management across retail and hospitality.
+              {ayawin.description}
             </p>
+            <a
+              href={ayawin.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-primary hover:underline"
+            >
+              Visit {ayawin.name}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
             <a
               href={CV_PATH}
               download

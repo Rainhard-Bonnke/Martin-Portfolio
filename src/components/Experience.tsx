@@ -7,11 +7,11 @@ const Experience = () => {
     <section id="experience" className="py-24 lg:py-32">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
-          number="03"
+          number="04"
           label="Experience"
           title="Hands-on roles in"
           highlight="inventory and stock control"
-          description="Progressive experience across auditing, bookkeeping, and procurement in retail, hospitality, and wine distribution."
+          description="From founding Ayawin Stock Solution to auditing, bookkeeping, and procurement across retail, hospitality, and wine distribution."
         />
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
@@ -26,9 +26,20 @@ const Experience = () => {
                 <h3 className="font-display text-2xl font-semibold text-foreground mb-1">
                   {item.title}
                 </h3>
-                <p className="text-sm font-medium text-muted-foreground mb-4">
-                  {item.organization}
-                </p>
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-primary hover:underline mb-4 inline-block"
+                  >
+                    {item.organization}
+                  </a>
+                ) : (
+                  <p className="text-sm font-medium text-muted-foreground mb-4">
+                    {item.organization}
+                  </p>
+                )}
                 <ul className="space-y-2">
                   {item.highlights.map((point) => (
                     <li

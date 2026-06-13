@@ -6,6 +6,7 @@ import { CV_PATH } from "@/lib/contact";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#gallery", label: "At Work" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
