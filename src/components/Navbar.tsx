@@ -1,90 +1,87 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/martin-koyih-logo.png";
+
+const navLinks = [
+  { href: "#about", label: "About" },
+  { href: "#expertise", label: "Expertise" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" },
+];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#services", label: "Services" },
-    { href: "#testimonials", label: "Testimonials" },
-    { href: "#contact", label: "Contact" },
-  ];
-
   return (
-    <nav
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft py-2"
-          : "bg-transparent py-4"
+          ? "bg-background/90 backdrop-blur-lg border-b border-border/50 py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <img 
-              src={logo} 
-              alt="Martin Koyih CPA Logo" 
-              className="h-12 md:h-14 w-auto"
-            />
+          <a href="#home" className="group flex items-center gap-3">
+            <span
+              className={`font-display text-xl font-semibold tracking-tight transition-colors ${
+                isScrolled ? "text-foreground" : "text-secondary-foreground"
+              }`}
+            >
+              M. Koyih
+            </span>
+            <span
+              className={`hidden sm:inline text-[10px] uppercase tracking-[0.25em] font-medium transition-colors ${
+                isScrolled ? "text-muted-foreground" : "text-secondary-foreground/60"
+              }`}
+            >
+              CPA
+            </span>
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-primary ${
-                  isScrolled ? "text-foreground" : "text-secondary-foreground"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  isScrolled ? "text-muted-foreground" : "text-secondary-foreground/80"
                 }`}
               >
                 {link.label}
               </a>
             ))}
-          </div>
+          </nav>
 
-          {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button
-              variant={isScrolled ? "default" : "heroOutline"}
-              size="default"
-              asChild
-            >
-              <a href="#contact">Get Consultation</a>
+            <Button variant={isScrolled ? "default" : "hero"} size="default" asChild>
+              <a href="#contact">Hire Me</a>
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button
             className="lg:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-secondary-foreground"}`} />
+              <X className={`h-5 w-5 ${isScrolled ? "text-foreground" : "text-secondary-foreground"}`} />
             ) : (
-              <Menu className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-secondary-foreground"}`} />
+              <Menu className={`h-5 w-5 ${isScrolled ? "text-foreground" : "text-secondary-foreground"}`} />
             )}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 animate-fade-in">
-            <div className="flex flex-col gap-4 bg-background/95 backdrop-blur-md rounded-lg p-4 shadow-elevated">
+          <div className="lg:hidden mt-4 animate-fade-in">
+            <div className="bg-card rounded-lg border border-border p-5 flex flex-col gap-4 shadow-elevated">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -95,14 +92,16 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="default" size="default" asChild>
-                <a href="#contact">Get Consultation</a>
+              <Button variant="default" asChild>
+                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  Hire Me
+                </a>
               </Button>
             </div>
           </div>
         )}
       </div>
-    </nav>
+    </header>
   );
 };
 

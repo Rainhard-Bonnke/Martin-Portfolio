@@ -1,105 +1,93 @@
-import { Award, Target, Shield, TrendingUp } from "lucide-react";
-import martinPhoto from "@/assets/martin-koyih-photo.jpeg";
+import { ArrowUpRight } from "lucide-react";
+import aboutPhoto from "@/assets/martin-koyih-photo.jpeg";
+import SectionHeader from "@/components/SectionHeader";
+
+const highlights = [
+  "CPA (K) Certified",
+  "ICPAK Member",
+  "Tax & Audit Specialist",
+  "Business Advisory",
+  "Stock Management",
+  "KRA Compliance",
+];
 
 const About = () => {
   return (
-    <section id="about" className="py-20 lg:py-32 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image */}
-          <div className="relative animate-fade-up order-2 lg:order-1">
-            <div className="relative rounded-2xl overflow-hidden shadow-elevated mx-auto max-w-sm sm:max-w-md lg:max-w-none">
-              <img
-                src={martinPhoto}
-                alt="Martin Koyih at work"
-                className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent" />
-            </div>
-            {/* Floating Card */}
-            <div className="absolute -bottom-4 right-4 sm:-bottom-6 sm:-right-6 bg-card p-4 sm:p-6 rounded-xl shadow-elevated max-w-[180px] sm:max-w-[220px]">
-              <div className="flex items-center gap-2 sm:gap-3 mb-2">
-                <Award className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-                <p className="font-serif text-xl sm:text-2xl font-bold text-foreground">CPA (K)</p>
+    <section id="about" className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-muted/40 -skew-x-6 translate-x-24 hidden lg:block" />
+
+      <div className="container mx-auto px-4 lg:px-8 relative">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-5 relative">
+            <div className="relative">
+              <div className="rounded-lg overflow-hidden shadow-elevated">
+                <img
+                  src={aboutPhoto}
+                  alt="Martin Koyih at work"
+                  className="w-full aspect-[3/4] object-cover object-top"
+                />
               </div>
-              <p className="text-muted-foreground text-xs sm:text-sm">Member of ICPAK - Institute of Certified Public Accountants of Kenya</p>
+              <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-secondary text-secondary-foreground p-6 rounded-lg max-w-[200px] shadow-elevated">
+                <p className="font-display text-4xl font-semibold text-primary">5+</p>
+                <p className="text-sm text-secondary-foreground/70 mt-1">
+                  Years delivering financial clarity to Kenyan businesses
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Content */}
-          <div className="lg:pl-8 order-1 lg:order-2">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              About Martin Koyih
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
-              Your Trusted{" "}
-              <span className="text-primary">Financial Partner</span>
-            </h2>
-            <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-4">
-              With 3+ years of experience in accounting and financial management, 
-              Martin Koyih is a Certified Public Accountant and the Founder & Manager of{" "}
-              <a 
-                href="https://ayawin.co.ke" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:underline font-semibold"
-              >
-                Ayawin Stock Solution
-              </a>
-              , dedicated to helping individuals and businesses navigate the complex world of finance.
-            </p>
-            <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-8">
-              Specializing in tax planning, auditing, stock management, financial consulting, 
-              and business advisory services, Martin brings expertise and a commitment 
-              to excellence to every client relationship.
-            </p>
+          <div className="lg:col-span-7 lg:pt-8">
+            <SectionHeader
+              number="01"
+              label="About"
+              title="Finance professional built on"
+              highlight="trust and precision"
+            />
 
-            {/* Expertise Areas */}
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Target className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Strategic Planning</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Long-term financial strategies tailored to your goals.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center">
-                  <Shield className="h-6 w-6 text-secondary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Tax Compliance</h3>
-                  <p className="text-muted-foreground text-sm">
-                    KRA compliance and tax optimization expertise.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <TrendingUp className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Business Growth</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Advisory services to scale your business efficiently.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center">
-                  <Award className="h-6 w-6 text-secondary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">ICPAK Certified</h3>
-                  <p className="text-muted-foreground text-sm">
-                    Professional standards and ethical practice.
-                  </p>
-                </div>
-              </div>
+            <blockquote className="border-l-2 border-primary pl-6 mb-8">
+              <p className="font-display text-xl lg:text-2xl text-foreground italic leading-relaxed">
+                "Numbers tell a story. My job is to make sure yours leads to
+                confident decisions."
+              </p>
+            </blockquote>
+
+            <div className="space-y-4 text-muted-foreground leading-relaxed mb-10">
+              <p>
+                I am Martin Koyih, a Certified Public Accountant and member of
+                ICPAK. As Founder and Manager of{" "}
+                <a
+                  href="https://ayawin.co.ke"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-medium hover:underline inline-flex items-center gap-0.5"
+                >
+                  Ayawin Stock Solution
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+                , I help individuals and businesses navigate accounting, taxation,
+                and financial management with clarity.
+              </p>
+              <p>
+                From audit and tax planning to payroll and financial reporting, I
+                bring hands-on expertise and a practical understanding of what
+                Kenyan organizations need to stay compliant and grow sustainably.
+              </p>
+              <p>
+                Open to consulting roles, advisory engagements, and partnerships
+                with organizations that value ethical, results-driven financial
+                leadership.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {highlights.map((item) => (
+                <span
+                  key={item}
+                  className="px-4 py-2 text-xs font-medium uppercase tracking-wider bg-muted text-muted-foreground rounded-full border border-border/60"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>

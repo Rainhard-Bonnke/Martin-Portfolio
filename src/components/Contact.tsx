@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, ArrowUpRight } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { EMAIL, getWhatsAppLink, PHONE_DISPLAY } from "@/lib/contact";
+import SectionHeader from "@/components/SectionHeader";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,15 +19,11 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    
     toast({
       title: "Message Sent!",
       description: "Thank you for your inquiry. Martin will get back to you within 24 hours.",
     });
-    
     setFormData({ name: "", email: "", phone: "", message: "" });
     setIsSubmitting(false);
   };
@@ -34,124 +32,134 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const whatsappMessage = encodeURIComponent("Hello Martin! I'm interested in your accounting services.");
-  const whatsappLink = `https://wa.me/254791259510?text=${whatsappMessage}`;
+  const whatsappLink = getWhatsAppLink();
+
+  const contactItems = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: EMAIL,
+      href: `mailto:${EMAIL}`,
+    },
+    {
+      icon: Phone,
+      label: "Phone / WhatsApp",
+      value: PHONE_DISPLAY,
+      href: whatsappLink,
+      external: true,
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "Nairobi, Kenya",
+    },
+  ];
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-background">
+    <section id="contact" className="py-24 lg:py-32">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Contact Info */}
-          <div>
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Get in Touch
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
-              Let's Discuss Your{" "}
-              <span className="text-primary">Financial Goals</span>
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              Whether you need tax advice, audit services, or comprehensive financial 
-              planning, I'm here to help you achieve your goals with professional expertise.
-            </p>
+        <SectionHeader
+          number="04"
+          label="Contact"
+          title="Let's build something"
+          highlight="together"
+          description="Available for consulting, accounting support, and professional opportunities. I typically respond within 24 hours."
+        />
 
-            {/* Contact Details */}
-            <div className="space-y-6 mb-8">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Mail className="h-5 w-5 text-primary" />
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="lg:col-span-2 space-y-4">
+            {contactItems.map((item) => (
+              <div
+                key={item.label}
+                className="group flex items-start gap-4 p-5 rounded-xl border border-border/60 bg-card hover:border-primary/30 hover:shadow-soft transition-all"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
+                  <item.icon className="h-4 w-4 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:ayawin.ke@gmail.com" className="font-semibold text-foreground hover:text-primary transition-colors">
-                    ayawin.ke@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Phone className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <a href="tel:+254791259510" className="font-semibold text-foreground hover:text-primary transition-colors">
-                    +254 791 259 510
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <MapPin className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-semibold text-foreground">
-                    Nairobi, Kenya
+                <div className="min-w-0">
+                  <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                    {item.label}
                   </p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      {...(item.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="font-medium text-foreground hover:text-primary transition-colors text-sm break-all"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="font-medium text-foreground text-sm">{item.value}</p>
+                  )}
                 </div>
               </div>
-            </div>
+            ))}
 
-            {/* WhatsApp Button */}
-            <Button variant="secondary" size="lg" className="w-full sm:w-auto" asChild>
+            <Button
+              variant="secondary"
+              size="lg"
+              className="w-full rounded-full mt-2"
+              asChild
+            >
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
+                <MessageCircle className="mr-2 h-4 w-4" />
                 Chat on WhatsApp
+                <ArrowUpRight className="ml-auto h-4 w-4" />
               </a>
             </Button>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-card rounded-2xl p-8 shadow-soft">
-            <h3 className="font-serif text-2xl font-bold text-foreground mb-6">
-              Send a Message
+          <div className="lg:col-span-3 bg-secondary rounded-2xl p-8 lg:p-10">
+            <h3 className="font-display text-2xl font-semibold text-secondary-foreground mb-2">
+              Send a message
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <Input
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="h-12"
-                />
-              </div>
+            <p className="text-secondary-foreground/60 text-sm mb-8">
+              Fill in the form and I will get back to you promptly.
+            </p>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Input
+                name="name"
+                placeholder="Your name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="h-12 bg-secondary-foreground/5 border-secondary-foreground/10 text-secondary-foreground placeholder:text-secondary-foreground/40"
+              />
               <div className="grid sm:grid-cols-2 gap-4">
                 <Input
                   name="email"
                   type="email"
-                  placeholder="Email Address"
+                  placeholder="Email address"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="h-12"
+                  className="h-12 bg-secondary-foreground/5 border-secondary-foreground/10 text-secondary-foreground placeholder:text-secondary-foreground/40"
                 />
                 <Input
                   name="phone"
                   type="tel"
-                  placeholder="Phone Number"
+                  placeholder="Phone number"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="h-12"
+                  className="h-12 bg-secondary-foreground/5 border-secondary-foreground/10 text-secondary-foreground placeholder:text-secondary-foreground/40"
                 />
               </div>
-              <div>
-                <Textarea
-                  name="message"
-                  placeholder="How can I help you with your financial needs?"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="resize-none"
-                />
-              </div>
-              <Button 
-                type="submit" 
-                variant="default" 
-                size="lg" 
-                className="w-full"
+              <Textarea
+                name="message"
+                placeholder="Tell me about your needs..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                className="resize-none bg-secondary-foreground/5 border-secondary-foreground/10 text-secondary-foreground placeholder:text-secondary-foreground/40"
+              />
+              <Button
+                type="submit"
+                variant="hero"
+                size="lg"
+                className="w-full rounded-full"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
