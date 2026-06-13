@@ -1,6 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getWhatsAppLink } from "@/lib/contact";
+import { CV_PATH, getWhatsAppLink } from "@/lib/contact";
 
 const CtaBand = () => {
   return (
@@ -11,26 +11,32 @@ const CtaBand = () => {
       <div className="container mx-auto px-4 lg:px-8 relative">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-primary text-xs uppercase tracking-[0.25em] font-semibold mb-4">
-            Let's work together
+            Ready to hire?
           </p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-secondary-foreground leading-tight mb-6">
-            Ready to bring clarity to your{" "}
-            <span className="text-gradient italic">finances?</span>
+            Looking for a reliable{" "}
+            <span className="text-gradient italic">stock controller?</span>
           </h2>
           <p className="text-secondary-foreground/65 text-base lg:text-lg mb-10 max-w-xl mx-auto">
-            Whether you need a trusted advisor, accounting support, or a qualified
-            CPA for your team, I am one message away.
+            Download my CV or get in touch to discuss how I can support your
+            inventory management and stock control needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="hero" size="lg" className="rounded-full px-8" asChild>
               <a href="#contact">
-                Get in Touch
+                Contact Me
                 <ArrowUpRight className="ml-1 h-4 w-4" />
               </a>
             </Button>
             <Button variant="heroOutline" size="lg" className="rounded-full px-8" asChild>
+              <a href={CV_PATH} download>
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </a>
+            </Button>
+            <Button variant="heroOutline" size="lg" className="rounded-full px-8" asChild>
               <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
-                Message on WhatsApp
+                WhatsApp
               </a>
             </Button>
           </div>

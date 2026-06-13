@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CV_PATH } from "@/lib/contact";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#expertise", label: "Expertise" },
+  { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
@@ -42,7 +43,7 @@ const Navbar = () => {
                 isScrolled ? "text-muted-foreground" : "text-secondary-foreground/60"
               }`}
             >
-              CPA
+              Stock Control
             </span>
           </a>
 
@@ -60,9 +61,20 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-3">
+            <Button
+              variant={isScrolled ? "outline" : "heroOutline"}
+              size="default"
+              className="rounded-full"
+              asChild
+            >
+              <a href={CV_PATH} download>
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </a>
+            </Button>
             <Button variant={isScrolled ? "default" : "hero"} size="default" asChild>
-              <a href="#contact">Hire Me</a>
+              <a href="#contact">Contact Me</a>
             </Button>
           </div>
 
@@ -92,9 +104,15 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
+              <Button variant="outline" asChild>
+                <a href={CV_PATH} download onClick={() => setIsMobileMenuOpen(false)}>
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV
+                </a>
+              </Button>
               <Button variant="default" asChild>
                 <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Hire Me
+                  Contact Me
                 </a>
               </Button>
             </div>

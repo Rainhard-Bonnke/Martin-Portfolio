@@ -1,9 +1,4 @@
-const stats = [
-  { value: "5+", label: "Years Experience" },
-  { value: "100+", label: "Clients Served" },
-  { value: "CPA (K)", label: "ICPAK Certified" },
-  { value: "8+", label: "Service Areas" },
-];
+import { stats } from "@/lib/portfolio-data";
 
 const StatsBar = () => {
   return (
@@ -13,7 +8,7 @@ const StatsBar = () => {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="py-8 lg:py-10 px-4 text-center lg:text-left lg:px-8 first:pl-4"
+              className="py-8 lg:py-10 px-4 text-center lg:text-left lg:px-8"
             >
               <p className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground">
                 {stat.value}

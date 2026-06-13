@@ -1,7 +1,8 @@
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight, Download, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroPhoto from "@/assets/Founder.jpeg";
-import { getWhatsAppLink } from "@/lib/contact";
+import { CV_PATH, getWhatsAppLink } from "@/lib/contact";
+import { profile } from "@/lib/portfolio-data";
 
 const Hero = () => {
   return (
@@ -16,44 +17,48 @@ const Hero = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
             <span className="text-secondary-foreground/70 text-xs uppercase tracking-[0.2em] font-medium">
-              Available for opportunities
+              {profile.availability}
             </span>
           </div>
 
-          <h1 className="font-display text-[clamp(2.75rem,7vw,5rem)] font-semibold text-secondary-foreground leading-[0.95] mb-6 animate-fade-up animation-delay-100">
+          <h1 className="font-display text-[clamp(2.75rem,7vw,5rem)] font-semibold text-secondary-foreground leading-[0.95] mb-4 animate-fade-up animation-delay-100">
             Martin
             <br />
             <span className="text-gradient italic">Koyih</span>
           </h1>
 
-          <p className="text-lg lg:text-xl text-secondary-foreground/75 max-w-md leading-relaxed mb-2 animate-fade-up animation-delay-200">
-            Certified Public Accountant & Founder of{" "}
-            <a
-              href="https://ayawin.co.ke"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline underline-offset-4 font-medium"
-            >
-              Ayawin Stock Solution
-            </a>
+          <p className="text-lg lg:text-xl text-primary font-medium mb-3 animate-fade-up animation-delay-200">
+            {profile.headline}
           </p>
 
-          <p className="text-secondary-foreground/55 text-sm lg:text-base max-w-md mb-10 animate-fade-up animation-delay-200">
-            Tax planning, auditing, stock management, and business advisory for
-            organizations that value precision, compliance, and growth.
+          <p className="text-base text-secondary-foreground/70 max-w-md mb-3 animate-fade-up animation-delay-200 leading-relaxed">
+            {profile.subheadline}
+          </p>
+
+          <p className="text-sm text-secondary-foreground/55 max-w-md mb-10 animate-fade-up animation-delay-200">
+            {profile.certificationNote}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 animate-fade-up animation-delay-300">
             <Button variant="hero" size="lg" className="rounded-full px-8" asChild>
               <a href="#contact">
-                Start a Conversation
+                Contact Me
                 <ArrowUpRight className="ml-1 h-4 w-4" />
               </a>
             </Button>
             <Button variant="heroOutline" size="lg" className="rounded-full px-8" asChild>
+              <a href={CV_PATH} download>
+                <Download className="mr-1 h-4 w-4" />
+                Download CV
+              </a>
+            </Button>
+          </div>
+
+          <div className="mt-4 animate-fade-up animation-delay-300">
+            <Button variant="ghost" size="sm" className="text-secondary-foreground/70 hover:text-primary px-0" asChild>
               <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-1 h-4 w-4" />
-                WhatsApp
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Chat on WhatsApp
               </a>
             </Button>
           </div>
@@ -63,24 +68,22 @@ const Hero = () => {
           <div className="absolute inset-0 hero-image-mask">
             <img
               src={heroPhoto}
-              alt="Martin Koyih, Certified Public Accountant"
+              alt="Martin Koyih"
               className="w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/20 to-transparent" />
           </div>
           <div className="absolute bottom-12 left-0 -translate-x-1/2 bg-card rounded-lg px-6 py-4 shadow-elevated border border-border/60 hidden xl:block">
-            <p className="font-display text-3xl font-semibold text-foreground">CPA (K)</p>
-            <p className="text-muted-foreground text-xs uppercase tracking-widest mt-0.5">ICPAK Member</p>
+            <p className="font-display text-2xl font-semibold text-foreground">BCom Finance</p>
+            <p className="text-muted-foreground text-xs uppercase tracking-widest mt-0.5">
+              University of Nairobi
+            </p>
           </div>
         </div>
 
         <div className="lg:hidden px-4 pb-8 animate-fade-up animation-delay-300">
           <div className="rounded-xl overflow-hidden aspect-[4/3] max-h-72 shadow-elevated">
-            <img
-              src={heroPhoto}
-              alt="Martin Koyih, Certified Public Accountant"
-              className="w-full h-full object-cover object-top"
-            />
+            <img src={heroPhoto} alt="Martin Koyih" className="w-full h-full object-cover object-top" />
           </div>
         </div>
       </div>

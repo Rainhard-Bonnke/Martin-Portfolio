@@ -1,9 +1,9 @@
-import { ArrowUpRight } from "lucide-react";
-import { EMAIL, getWhatsAppLink, PHONE_DISPLAY } from "@/lib/contact";
+import { ArrowUpRight, Download } from "lucide-react";
+import { CV_PATH, EMAIL, getWhatsAppLink, LOCATION, PHONE_DISPLAY } from "@/lib/contact";
 
 const footerLinks = [
   { label: "About", href: "#about" },
-  { label: "Expertise", href: "#expertise" },
+  { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
@@ -19,11 +19,21 @@ const Footer = () => {
             <a href="#home" className="font-display text-2xl font-semibold text-foreground">
               Martin Koyih
             </a>
-            <p className="text-muted-foreground text-sm mt-1">Certified Public Accountant</p>
-            <p className="text-muted-foreground text-sm leading-relaxed mt-4 max-w-xs">
-              Professional accounting, tax, and advisory services in Nairobi and
-              across Kenya.
+            <p className="text-muted-foreground text-sm mt-1">
+              Stock Controller & Inventory Professional
             </p>
+            <p className="text-muted-foreground text-sm leading-relaxed mt-4 max-w-xs">
+              Inventory audits, stock reconciliation, procurement support, and ERP-based
+              stock management across retail and hospitality.
+            </p>
+            <a
+              href={CV_PATH}
+              download
+              className="inline-flex items-center gap-2 mt-5 text-sm font-medium text-primary hover:underline"
+            >
+              <Download className="h-4 w-4" />
+              Download CV
+            </a>
           </div>
 
           <div>
@@ -68,7 +78,7 @@ const Footer = () => {
                   {PHONE_DISPLAY}
                 </a>
               </li>
-              <li className="text-foreground/80">Nairobi, Kenya</li>
+              <li className="text-foreground/80">{LOCATION}</li>
             </ul>
           </div>
         </div>
@@ -77,11 +87,9 @@ const Footer = () => {
       <div className="border-t border-border/60">
         <div className="container mx-auto px-4 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-muted-foreground text-xs">
-            © {currentYear} Martin Koyih, CPA. All rights reserved.
+            © {currentYear} Martin Koyih. All rights reserved.
           </p>
-          <p className="text-muted-foreground text-xs">
-            Built with precision, like good accounting.
-          </p>
+          <p className="text-muted-foreground text-xs">CPA certification in progress</p>
         </div>
       </div>
     </footer>

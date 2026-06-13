@@ -1,15 +1,9 @@
-import { ArrowUpRight } from "lucide-react";
+import { Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import aboutPhoto from "@/assets/martin-koyih-photo.jpeg";
 import SectionHeader from "@/components/SectionHeader";
-
-const highlights = [
-  "CPA (K) Certified",
-  "ICPAK Member",
-  "Tax & Audit Specialist",
-  "Business Advisory",
-  "Stock Management",
-  "KRA Compliance",
-];
+import { CV_PATH } from "@/lib/contact";
+import { profile, skillTags, languages } from "@/lib/portfolio-data";
 
 const About = () => {
   return (
@@ -23,14 +17,14 @@ const About = () => {
               <div className="rounded-lg overflow-hidden shadow-elevated">
                 <img
                   src={aboutPhoto}
-                  alt="Martin Koyih at work"
+                  alt="Martin Koyih"
                   className="w-full aspect-[3/4] object-cover object-top"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-secondary text-secondary-foreground p-6 rounded-lg max-w-[200px] shadow-elevated">
-                <p className="font-display text-4xl font-semibold text-primary">5+</p>
+              <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-secondary text-secondary-foreground p-6 rounded-lg max-w-[220px] shadow-elevated">
+                <p className="font-display text-3xl font-semibold text-primary">CPA</p>
                 <p className="text-sm text-secondary-foreground/70 mt-1">
-                  Years delivering financial clarity to Kenyan businesses
+                  Certification in progress, Vision Institute of Professionals
                 </p>
               </div>
             </div>
@@ -40,47 +34,36 @@ const About = () => {
             <SectionHeader
               number="01"
               label="About"
-              title="Finance professional built on"
-              highlight="trust and precision"
+              title="Inventory professional focused on"
+              highlight="accuracy and control"
             />
 
             <blockquote className="border-l-2 border-primary pl-6 mb-8">
               <p className="font-display text-xl lg:text-2xl text-foreground italic leading-relaxed">
-                "Numbers tell a story. My job is to make sure yours leads to
-                confident decisions."
+                "{profile.quote}"
               </p>
             </blockquote>
 
-            <div className="space-y-4 text-muted-foreground leading-relaxed mb-10">
+            <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
               <p>
-                I am Martin Koyih, a Certified Public Accountant and member of
-                ICPAK. As Founder and Manager of{" "}
-                <a
-                  href="https://ayawin.co.ke"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary font-medium hover:underline inline-flex items-center gap-0.5"
-                >
-                  Ayawin Stock Solution
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
-                , I help individuals and businesses navigate accounting, taxation,
-                and financial management with clarity.
+                Detail-oriented inventory and stock control professional with hands-on
+                experience in stock audits, inventory reconciliation, procurement, and
+                ERP-based stock management. Skilled at maintaining accurate stock records,
+                minimizing variances, and supporting smooth supply chain operations across
+                retail and hospitality outlets.
               </p>
-              <p>
-                From audit and tax planning to payroll and financial reporting, I
-                bring hands-on expertise and a practical understanding of what
-                Kenyan organizations need to stay compliant and grow sustainably.
-              </p>
-              <p>
-                Open to consulting roles, advisory engagements, and partnerships
-                with organizations that value ethical, results-driven financial
-                leadership.
-              </p>
+              <p>{profile.objective}</p>
             </div>
 
-            <div className="flex flex-wrap gap-2">
-              {highlights.map((item) => (
+            <Button variant="outline" className="rounded-full mb-10" asChild>
+              <a href={CV_PATH} download>
+                <Download className="mr-2 h-4 w-4" />
+                Download Full CV
+              </a>
+            </Button>
+
+            <div className="flex flex-wrap gap-2 mb-6">
+              {skillTags.map((item) => (
                 <span
                   key={item}
                   className="px-4 py-2 text-xs font-medium uppercase tracking-wider bg-muted text-muted-foreground rounded-full border border-border/60"
@@ -89,6 +72,11 @@ const About = () => {
                 </span>
               ))}
             </div>
+
+            <p className="text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">Languages:</span>{" "}
+              {languages.join(", ")}
+            </p>
           </div>
         </div>
       </div>

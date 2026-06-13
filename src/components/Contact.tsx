@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, ArrowUpRight, Download } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import { EMAIL, getWhatsAppLink, PHONE_DISPLAY } from "@/lib/contact";
+import { CV_PATH, EMAIL, getWhatsAppLink, LOCATION, PHONE_DISPLAY } from "@/lib/contact";
 import SectionHeader from "@/components/SectionHeader";
 
 const Contact = () => {
@@ -22,7 +22,7 @@ const Contact = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     toast({
       title: "Message Sent!",
-      description: "Thank you for your inquiry. Martin will get back to you within 24 hours.",
+      description: "Thank you for reaching out. Martin will get back to you within 24 hours.",
     });
     setFormData({ name: "", email: "", phone: "", message: "" });
     setIsSubmitting(false);
@@ -51,7 +51,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Nairobi, Kenya",
+      value: LOCATION,
     },
   ];
 
@@ -61,9 +61,9 @@ const Contact = () => {
         <SectionHeader
           number="04"
           label="Contact"
-          title="Let's build something"
-          highlight="together"
-          description="Available for consulting, accounting support, and professional opportunities. I typically respond within 24 hours."
+          title="Let's connect about"
+          highlight="your opportunity"
+          description="Available for stock controller roles and related inventory positions. I typically respond within 24 hours."
         />
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
@@ -97,12 +97,14 @@ const Contact = () => {
               </div>
             ))}
 
-            <Button
-              variant="secondary"
-              size="lg"
-              className="w-full rounded-full mt-2"
-              asChild
-            >
+            <Button variant="outline" size="lg" className="w-full rounded-full" asChild>
+              <a href={CV_PATH} download>
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </a>
+            </Button>
+
+            <Button variant="secondary" size="lg" className="w-full rounded-full" asChild>
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2 h-4 w-4" />
                 Chat on WhatsApp
@@ -116,7 +118,7 @@ const Contact = () => {
               Send a message
             </h3>
             <p className="text-secondary-foreground/60 text-sm mb-8">
-              Fill in the form and I will get back to you promptly.
+              Interested in my stock control experience? Send a message below.
             </p>
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
@@ -148,7 +150,7 @@ const Contact = () => {
               </div>
               <Textarea
                 name="message"
-                placeholder="Tell me about your needs..."
+                placeholder="Tell me about the role or opportunity..."
                 value={formData.message}
                 onChange={handleChange}
                 required
